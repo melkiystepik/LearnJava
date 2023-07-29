@@ -1,18 +1,18 @@
 package learnJavaAtPrison;
 
-public class test {
+import java.util.function.Supplier;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str = "Без защитных средств человек не может прожить и нескольких минут в Северном Атлантическом Океане, где температура воды часто близка к нулю градусов Цельсия почти целый год. Поэтому по закону спасательные шлюпки пассажирских судов должны быть укомплектованы водонепроницаемой и теплой одеждой";
-		int len = str.length();
-		int count =0;
-		for (char bukva : str.toCharArray()) {
-			if ((bukva == 'о') || (bukva == 'О')) {
-					count++;
-			}
-		}
-		System.out.println(count);
+public class test {
+	public static void main (String [] args) {
+	Supplier <Double> randomNumberSupplier = Math::random;
+	System.out.println(randomNumberSupplier.get());
+	
+	Supplier <String> greetingsSupplier = () -> {
+		String [] greetings = {"Hello", "Bonjour", "Hola", "Namaste"};
+		int randomIndex = ((int) (Math.random()*10) % greetings.length);
+		return greetings [randomIndex];
+	};
+	System.out.println(greetingsSupplier.get());
 	}
 
 }
